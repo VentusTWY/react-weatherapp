@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
+import { ChakraProvider } from '@chakra-ui/react'
 // import reactLogo from './assets/react.svg'
-// import Weather from './components/weather'
+import Weather from './components/weather'
 import './App.css'
 
 export default function App() {
@@ -25,18 +26,15 @@ export default function App() {
   }, [lat, long]);
 
   return (
-    <div className="App">
-      latitude: {lat} <br />
-      longitude: {long}
-      <div className="weather">
-        {data !== null ? (
-          <div>
-            <h1>{data.name}</h1>
-            <h3>{data.weather[0].main}</h3>
-            <h3>{data.main.temp}°C</h3>
-          </div>) : null}
+    <ChakraProvider>
+      <div className="App">
+        <div className="weather">
+          {data !== null ? (
+            <Weather weatherData={data} />
+          ) : null}
+        </div>
       </div>
-    </div>
+    </ChakraProvider >
   )
 }
 
