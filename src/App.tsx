@@ -1,8 +1,7 @@
 import React, { useEffect, useState } from "react";
-import { ChakraProvider } from '@chakra-ui/react'
+import { ChakraProvider, Flex } from '@chakra-ui/react'
 // import reactLogo from './assets/react.svg'
-import Weather from './components/weather'
-import './App.css'
+import { Weather } from './components/weather'
 
 export default function App() {
   const [lat, setLat] = useState<number>(0);
