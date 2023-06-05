@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import { ChakraProvider, Flex } from '@chakra-ui/react'
 // import reactLogo from './assets/react.svg'
 import { Weather } from './components/weather'
+import { Clock } from "./components/clock";
 
 export default function App() {
   const [lat, setLat] = useState<number>(0);
@@ -26,13 +27,12 @@ export default function App() {
 
   return (
     <ChakraProvider>
-      <div className="App">
-        <div className="weather">
-          {data !== null ? (
-            <Weather weatherData={data} />
-          ) : null}
-        </div>
-      </div>
+      <Flex flexDir={"column"} paddingY={150} alignItems='center' width='100vw' height='100vh' gap={50}>
+        <Clock />
+        {data !== null ? (
+          <Weather weatherData={data} />
+        ) : null}
+      </Flex>
     </ChakraProvider >
   )
 }

@@ -12,6 +12,7 @@
     "@chakra-ui/react": "^2.7.0",
     "@emotion/react": "^11.11.0",
     "@emotion/styled": "^11.11.0",
+    "@fontsource/roboto": "^5.0.2",
     "dotenv": "^16.1.0",
     "framer-motion": "^10.12.16",
     "moment": "^2.29.4",
